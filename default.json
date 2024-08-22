@@ -3,6 +3,9 @@
   "timezone": "Europe/Berlin",
   "configMigration": true,
   "extends": [
+    "preview:buildkite",
+    "preview:dockerCompose",
+    "preview:dockerVersions",
     "config:best-practices",
     ":automergeAll",
     ":automergeBranch",
