@@ -7,7 +7,9 @@
     ":automergeAll",
     ":automergeBranch",
     ":combinePatchMinorReleases",
-    ":rebaseStalePrs"
+    ":rebaseStalePrs",
+    ":pinOnlyDevDependencies",
+    "helpers:pinGitHubActionDigestsToSemver"
   ],
   "kustomize": {
     "pinDigests": true
