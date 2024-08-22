@@ -6,10 +6,7 @@
     "config:best-practices",
     ":automergeAll",
     ":automergeBranch",
-    ":combinePatchMinorReleases",
-    ":rebaseStalePrs",
-    ":pinOnlyDevDependencies",
-    "helpers:pinGitHubActionDigestsToSemver"
+    ":pinOnlyDevDependencies"
   ],
   "kustomize": {
     "pinDigests": true
