@@ -5,24 +5,20 @@
   "extends": [
     "config:best-practices",
     ":automergeAll",
-    ":automergePr",
-    ":combinePatchMinorReleases",
-    "preview:buildkite",
+    ":automergeRequireAllStatusChecks",
     "preview:dockerCompose",
     "preview:dockerVersions",
-    ":automergeRequireAllStatusChecks"
+    "schedule:automergeEarlyMondays",
+    ":semanticPrefixFix",
+    ":prHourlyLimitNone"
+  ],
+  "schedule": [
+    "* * * * *"
   ],
   "osvVulnerabilityAlerts": true,
   "kustomize": {
     "pinDigests": true
   },
-  "packageRules": [
-    {
-      "matchDatasources": ["docker"],
-      "matchUpdateTypes": ["minor", "major", "digest"],
-      "bumpVersion": "patch"
-    }
-  ],
   "customManagers": [
     {
       "customType": "regex",
