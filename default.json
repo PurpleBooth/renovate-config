@@ -5,12 +5,9 @@
   "extends": [
     "config:best-practices",
     ":automergeAll",
-    ":automergeRequireAllStatusChecks",
     "preview:dockerCompose",
     "preview:dockerVersions",
-    "schedule:automergeEarlyMondays",
-    ":semanticPrefixFix",
-    ":prHourlyLimitNone"
+    "schedule:automergeEarlyMondays"
   ],
   "schedule": [
     "* * * * *"
