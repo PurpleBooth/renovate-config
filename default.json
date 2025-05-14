@@ -4,13 +4,24 @@
   "configMigration": true,
   "extends": [
     "config:best-practices",
+    ":semanticCommits",
     ":automergeAll",
     "preview:dockerCompose",
     "preview:dockerVersions",
+    "customManagers:dockerfileVersions",
+    "customManagers:helmChartYamlAppVersions",
+    "customManagers:tfvarsVersions",
     "schedule:automergeEarlyMondays"
   ],
-  "schedule": [
-    "* * * * *"
+  "packageRules": [
+    {
+      "matchDatasources": [
+        "docker"
+      ],
+      "extends": [
+        ":semanticCommitTypeAll(fix)"
+      ]
+    }
   ],
   "osvVulnerabilityAlerts": true,
   "kustomize": {
